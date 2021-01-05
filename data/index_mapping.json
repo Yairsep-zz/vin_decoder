@@ -1,0 +1,70 @@
+[
+  {
+    "index": "0",
+    "decode": "Country"
+  },
+  {
+    "code": "1",
+    "name": "Manufacture"
+  },
+  {
+    "code": "2",
+    "name": "Make"
+  },
+  {
+    "code": "3",
+    "name": "Restraint Type"
+  },
+  {
+    "code": "4",
+    "name": "Series"
+  },
+  {
+    "code": "5",
+    "name": "Body Type"
+  },
+  {
+    "code": "6",
+    "name": "Body Type"
+  },
+  {
+    "code": "7",
+    "name": "Engine Type"
+  },
+  {
+    "code": "8",
+    "name": "Check Digit"
+  },
+  {
+    "code": "9",
+    "name": "Model Year"
+  },
+  {
+    "code": "10",
+    "name": "Plant"
+  },
+  {
+    "code": "11",
+    "name": "Production Sequence"
+  },
+  {
+    "code": "12",
+    "name": "Production Sequence"
+  },
+  {
+    "code": "13",
+    "name": "Production Sequence"
+  },
+  {
+    "code": "14",
+    "name": "Production Sequence"
+  },
+  {
+    "code": "15",
+    "name": "Production Sequence"
+  },
+  {
+    "code": "16",
+    "name": "Production Sequence"
+  }
+]
