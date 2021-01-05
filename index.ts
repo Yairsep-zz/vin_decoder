@@ -2,7 +2,7 @@ export { }
 var fs = require('fs');
 var path = require('path');
 
-interface Vin{
+interface Car_Specs{
     country: string;
     manufacture: string;
     Make: string;
@@ -19,6 +19,13 @@ interface Vin{
 const index_mapping = JSON.parse(fs.readFileSync(path.join('data','index_mapping.json'), "utf8"));
 const countries = JSON.parse(fs.readFileSync(path.join('data','countries.json'), "utf8"));
 const manufacturers = JSON.parse(fs.readFileSync(path.join('data','manufacters.json'), "utf8"));
+
+
+//Ford & GM & Toyota
+const Ford_specs = JSON.parse(fs.readFileSync(path.join('data','Ford_specs.json'), "utf8"));
+const GM_specs = JSON.parse(fs.readFileSync(path.join('data','GM_specs.json'), "utf8"));
+const Toyota_specs = JSON.parse(fs.readFileSync(path.join('data','Toyota_specs.json'), "utf8"));
+
 
 // console.log(countries);
 // console.log(manufacturers);
@@ -64,9 +71,9 @@ const split = function(vin) {
     return rawInfo;
 };
 
-var lookup = function(keyName, key, elements) {
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
+const lookup = function(keyName, key, elements) {
+    for (let i = 0; i < elements.length; i++) {
+        let element = elements[i];
 
         if (element[keyName] == key)
             return element;
@@ -76,24 +83,50 @@ var lookup = function(keyName, key, elements) {
 };
 
 const get_country = (vin) => {
-    var countryCode = split(vin).madeIn;
+    let countryCode = split(vin).madeIn;
     console.log(countryCode);
-    var country = lookup('code',countryCode, countries);
+    let country = lookup('code',countryCode, countries);
     console.log(country.name);
     return country.name;
 
 }
 
-var getManufacturer = (vin) => {
-    var codeValues = split(vin);
+const get_Manufacturer = (vin) => {
+    let codeValues = split(vin);
     console.log(codeValues.manufacturer);
-    var manufacturer = lookup('code', codeValues.manufacturer, manufacturers);
+    let manufacturer = lookup('code', codeValues.manufacturer, manufacturers);
     console.log(manufacturer.name);
     return manufacturer.name;
 };
 
+const get_Restraint_System = (vin) => {
+    let codeValues = split(vin);
+};
 
+const get_Series = (vin) => {
+    let codeValues = split(vin);
+};
+
+const get_Body_Type = (vin) => {
+    let codeValues = split(vin);
+}
+
+const get_Engine_Type = (vin) => {
+    let codeValues = split(vin);
+};
+
+const get_Model_Year = (vin) => {
+    let codeValues = split(vin);
+};
+
+
+const get_Plant = (vin) => {
+    let codeValues = split(vin);
+};
+
+
+//tests
 validate("4Y1SL65848Z411439");
 // split("4Y1SL65848Z411439");
 get_country("1NXBR32E77Z923602");
-getManufacturer("1NXBR32E77Z923602");
+get_Manufacturer("1NXBR32E77Z923602");
